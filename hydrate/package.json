@@ -1,0 +1,6 @@
+{
+  "name": "@llanas/ds/hydrate",
+  "description": "LlanasDs component hydration app.",
+  "main": "index.js",
+  "types": "index.d.ts"
+}
