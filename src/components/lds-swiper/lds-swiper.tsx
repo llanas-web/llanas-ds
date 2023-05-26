@@ -10,6 +10,7 @@ export class LdsSwiper {
   render() {
     return (
       <Host>
+        <p>Test intégration</p>
         <slot></slot>
       </Host>
     );
