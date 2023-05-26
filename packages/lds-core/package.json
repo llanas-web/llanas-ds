@@ -1,5 +1,5 @@
 {
-  "name": "@llanas/ds",
+  "name": "lds-core",
   "version": "0.0.1-3",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -9,15 +9,14 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/llanas-ds/llanas-ds.esm.js",
+  "unpkg": "dist/lds-core/lds-core.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ionic-team/stencil-component-starter.git"
   },
   "files": [
     "dist/",
-    "loader/",
-    "hydrate/"
+    "loader/"
   ],
   "scripts": {
     "build": "stencil build --docs",
@@ -30,16 +29,12 @@
     "@stencil/core": "^3.0.0"
   },
   "devDependencies": {
+    "@stencil/vue-output-target": "^0.8.5",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.33",
+    "@types/node": "^16.18.11",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
-    "lerna": "^6.6.2",
-    "puppeteer": "^19.5.2",
-    "typescript": "^5.0.4"
+    "puppeteer": "^19.5.2"
   },
-  "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ]
+  "license": "MIT"
 }

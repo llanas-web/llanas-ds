@@ -1,0 +1,32 @@
+{
+  "name": "lds-vue",
+  "version": "0.0.1-3",
+  "description": "> TODO: description",
+  "author": "Boris MAURENCE <12050570+llanas@users.noreply.github.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "npm run tsc",
+    "tsc": "tsc -p ."
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "lds-core": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github/llanas-web/llanas-ds"
+  },
+  "scripts": {
+    "test": "node ./__tests__/lds-vue.test.js"
+  }
+}
