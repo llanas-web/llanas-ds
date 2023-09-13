@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'lds-swiper',
@@ -7,11 +7,14 @@ import { Component, Host, h } from '@stencil/core';
 })
 export class LdsSwiper {
 
+  @Prop() name: string;
+
   render() {
     return (
       <Host>
-        <p>Test intégration</p>
-        <slot></slot>
+        <div class="lds-swiper-container">
+          <slot></slot>
+        </div>
       </Host>
     );
   }

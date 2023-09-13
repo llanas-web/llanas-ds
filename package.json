@@ -12,7 +12,7 @@
   "unpkg": "dist/llanas-ds/llanas-ds.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/llanas-web/llanas-ds.git"
   },
   "files": [
     "dist/",

@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface LdsSwiper {
+        "name": string;
     }
     interface MyComponent {
         /**
@@ -43,6 +44,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface LdsSwiper {
+        "name"?: string;
     }
     interface MyComponent {
         /**
