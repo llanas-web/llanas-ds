@@ -2,6 +2,7 @@
   "name": "@llanas/ds",
   "version": "0.0.1-alpha.1",
   "description": "Stencil Component Starter",
+  "private": true,
   "engines": {
     "node": ">=16",
     "pnpm": ">=8",
