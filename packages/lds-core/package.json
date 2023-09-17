@@ -1,6 +1,6 @@
 {
   "name": "lds-core",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -12,7 +12,7 @@
   "unpkg": "dist/lds-core/lds-core.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/llanas-web/llanas-ds/packages/lds-core#readme"
   },
   "files": [
     "dist/",

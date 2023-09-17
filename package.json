@@ -1,39 +1,33 @@
 {
   "name": "@llanas/ds",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "Stencil Component Starter",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
-  "es2015": "dist/esm/index.mjs",
-  "es2017": "dist/esm/index.mjs",
-  "types": "dist/types/index.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
-  "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/llanas-ds/llanas-ds.esm.js",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=8",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/llanas-web/llanas-ds.git"
   },
-  "files": [
-    "dist/",
-    "loader/",
-    "hydrate/"
-  ],
   "scripts": {
-    "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "build": "pnpm -r --stream --filter=./packages/* build",
+    "build:doc": "pnpm -r --stream --filter=./packages/* build:doc",
+    "lint": " pnpm -r --stream --filter=./packages/* prettier:check && pnpm -r --stream --filter=./packages/* lint",
+    "prettier:check": "prettier --check packages",
+    "prettier:format": "prettier --write packages",
+    "test": "pnpm -r --stream --filter=./packages/* test",
+    "tag": "pnpm changeset tag",
+    "changelog": "pnpm -r --stream --filter=./packages/* changelog && git add . && git commit -m \"chore: update changelogs\"",
+    "release": "pnpm changeset && pnpm changeset version && pnpm changelog",
+    "publish": "pnpm -r publish --no-git-checks --filter=./packages/*"
   },
   "devDependencies": {
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.33",
-    "jest": "^27.5.1",
-    "jest-cli": "^27.5.1",
-    "lerna": "^6.6.2",
-    "puppeteer": "^19.5.2",
-    "typescript": "^5.0.4"
+    "@changesets/cli": "2.24.4",
+    "prettier": "^2.7.1",
+    "standard-changelog": "^2.0.27"
   },
   "license": "MIT",
   "workspaces": [
