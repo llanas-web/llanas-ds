@@ -22,8 +22,9 @@
     "tag": "pnpm changeset tag",
     "changelog": "pnpm -r --stream --filter=./packages/* changelog && git add . && git commit -m \"chore: update changelogs\"",
     "release": "pnpm changeset && pnpm changeset version && pnpm changelog",
+    "version:patch": "lerna version prepatch --no-private -y --preid patch --conventional-commits",
     "publish": "pnpm -r publish --no-git-checks --filter=./packages/*",
-    "publish:ci": "lerna publish from-package --no-private -y --canary --dist-tag next --preid next --force-publish=*"
+    "publish:ci": "lerna publish from-package -y --canary --force-publish=*"
   },
   "dependencies": {
     "lerna": "^7.3.0"
