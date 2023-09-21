@@ -17,6 +17,6 @@ jobs:
           node-version: 'latest'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm publish:ci
+      - run: npm run publish:ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
