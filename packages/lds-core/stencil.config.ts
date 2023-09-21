@@ -13,6 +13,10 @@ export const config: Config = {
       generateTypeDeclarations: true,
       customElementsExportBehavior: 'single-export-module',
     },
+    {
+      type: 'www',
+      serviceWorker: null, // disable service workers
+    },
     vueOutputTarget({
       componentCorePackage: 'stencil-library',
       proxiesFile: '../vue-library/lib/components.ts',
