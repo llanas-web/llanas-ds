@@ -1,6 +1,6 @@
 {
   "name": "lds-core",
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.4",
   "description": "Stencil Component Starter",
   "main": "dist/components/index.js",
   "module": "dist/index.mjs",
