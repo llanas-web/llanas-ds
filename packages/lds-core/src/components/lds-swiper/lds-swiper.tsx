@@ -14,6 +14,7 @@ export class LdsSwiper {
       <Host>
         <div class="lds-swiper-container">
           <p class={this.name}>{this.name}</p>
+          <p>From LDS-SWIPER</p>
           <slot></slot>
         </div>
       </Host>

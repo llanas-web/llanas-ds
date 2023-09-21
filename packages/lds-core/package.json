@@ -4,6 +4,7 @@
   "description": "Stencil Component Starter",
   "license": "MIT",
   "access": "public",
+  "homepage": "https://github.com/llanas-web/llanas-ds/packages/lds-core#readme",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
