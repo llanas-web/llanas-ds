@@ -2,6 +2,10 @@ name: Publish
 on:
   release:
     types: [published]
+  push:
+    branches:
+      - develop
+      - 'release/**'
 jobs:
   build:
     runs-on: ubuntu-latest
