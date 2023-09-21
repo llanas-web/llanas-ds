@@ -22,7 +22,8 @@
     "tag": "pnpm changeset tag",
     "changelog": "pnpm -r --stream --filter=./packages/* changelog && git add . && git commit -m \"chore: update changelogs\"",
     "release": "pnpm changeset && pnpm changeset version && pnpm changelog",
-    "publish": "pnpm -r publish --no-git-checks --filter=./packages/*"
+    "publish": "pnpm -r publish --no-git-checks --filter=./packages/*",
+    "publish:ci": "lerna publish --no-private -y --canary --preid next --npm-tag=ci --force-publish=*"
   },
   "devDependencies": {
     "@changesets/cli": "2.24.4",
