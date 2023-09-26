@@ -24,6 +24,7 @@
     "url": "git+https://github.com/llanas-web/llanas-ds.git"
   },
   "scripts": {
+    "changelog": "gitmoji-changelog -o CHANGELOG.md",
     "test": "node ./__tests__/lds-astro.test.js"
   },
   "bugs": {

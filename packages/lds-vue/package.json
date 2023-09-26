@@ -27,6 +27,7 @@
     "url": "https://github/llanas-web/llanas-ds"
   },
   "scripts": {
+    "changelog": "gitmoji-changelog -o CHANGELOG.md",
     "test": "node ./__tests__/lds-vue.test.js"
   }
 }
