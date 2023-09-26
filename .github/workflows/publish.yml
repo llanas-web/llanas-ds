@@ -7,18 +7,42 @@ on:
       - develop
       - 'release/**'
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
           node-version: 'latest'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
+          cache: 'pnpm'
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name 'Boris MAURENCE'
+          git config --global user.email '12050570+llanas@users.noreply.github.com'
+          git remote set-url origin https://github.com/llanas-web/llanas-ds.git
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+      - name: Install dependencies
+        run: pnpm install
+      - name: Versioning
+        run: npm run version:patch
+      - name: Authenticate with Registry
+        run: |
+          yarn logout
+          echo "@apollo-elements:registry=http://registry.npmjs.org/" > .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npm run publish:ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
