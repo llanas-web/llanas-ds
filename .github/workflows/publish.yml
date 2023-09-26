@@ -20,10 +20,29 @@ jobs:
           node-version: 'latest'
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name 'Boris MAURENCE'
+          git config --global user.email '12050570+llanas@users.noreply.github.com'
+          git remote set-url origin https://github.com/llanas-web/llanas-ds.git
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
       - name: Install dependencies
         run: pnpm install
       - name: Versioning
         run: npm run version:patch
+      - name: Authenticate with Registry
+        run: |
+          yarn logout
+          echo "@apollo-elements:registry=http://registry.npmjs.org/" > .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npm run publish:ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
