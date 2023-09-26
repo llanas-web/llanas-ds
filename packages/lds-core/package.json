@@ -17,7 +17,7 @@
   "jsnext:main": "dist/esm/index.mjs",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/lds-core/lds-core.esm.js",
+  "unpkg": "dist/llanas/lds-core/lds-core.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/llanas-web/llanas-ds/packages/lds-core#readme"
@@ -25,7 +25,8 @@
   "files": [
     "dist/",
     "loader/",
-    "www"
+    "www",
+    "hydrate/"
   ],
   "scripts": {
     "build": "stencil build --docs",

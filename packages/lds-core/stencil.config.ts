@@ -21,6 +21,9 @@ export const config: Config = {
       componentCorePackage: 'stencil-library',
       proxiesFile: '../vue-library/lib/components.ts',
     }),
+    {
+      type: 'dist-hydrate-script',
+    },
   ],
   extras: {
     experimentalImportInjection: true,
