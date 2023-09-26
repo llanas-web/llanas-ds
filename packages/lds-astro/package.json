@@ -1,9 +1,9 @@
 {
   "name": "@llanas/lds-astro",
-  "version": "0.0.1-alpha.7",
+  "version": "0.0.4-patch.0",
   "description": "> TODO: description",
   "author": "Boris MAURENCE <12050570+llanas@users.noreply.github.com>",
-  "homepage": "https://github.com/llanas-web/llanas-ds#readme",
+  "homepage": "https://github.com/llanas-web/llanas-ds/packages/lds-astro#readme",
   "license": "MIT",
   "access": "public",
   "publishConfig": {
@@ -24,6 +24,7 @@
     "url": "git+https://github.com/llanas-web/llanas-ds.git"
   },
   "scripts": {
+    "changelog": "gitmoji-changelog -o CHANGELOG.md",
     "test": "node ./__tests__/lds-astro.test.js"
   },
   "bugs": {

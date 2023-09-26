@@ -2,6 +2,7 @@
   "name": "@llanas/lds",
   "description": "Stencil Component Starter",
   "private": true,
+  "version": "0.0.4-patch.0",
   "engines": {
     "node": ">=16",
     "pnpm": ">=8",
@@ -20,16 +21,19 @@
     "prettier:format": "prettier --write packages",
     "test": "pnpm -r --stream --filter=./packages/* test",
     "tag": "pnpm changeset tag",
-    "changelog": "pnpm -r --stream --filter=./packages/* changelog && git add . && git commit -m \"chore: update changelogs\"",
+    "changelog": "pnpm -r --stream --filter=./packages/* changelog ",
+    "changelog:old": "pnpm -r --stream --filter=./packages/* changelog && git add . && git commit -m \"chore: update changelogs\"",
     "release": "pnpm changeset && pnpm changeset version && pnpm changelog",
+    "version:patch": "lerna version prepatch --no-private -y --preid patch --no-changelog",
     "publish": "pnpm -r publish --no-git-checks --filter=./packages/*",
-    "publish:ci": "lerna publish from-package --no-private -y --canary --preid next --force-publish=*"
+    "publish:ci": "lerna publish from-package -y --canary --force-publish=*"
   },
   "dependencies": {
     "lerna": "^7.3.0"
   },
   "devDependencies": {
     "@changesets/cli": "2.24.4",
+    "gitmoji-changelog": "^2.3.0",
     "prettier": "^2.7.1",
     "standard-changelog": "^2.0.27"
   },

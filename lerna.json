@@ -1,5 +1,12 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "0.0.1-alpha.7",
-  "packages": ["packages/*"]
+  "version": "0.0.4-patch.0",
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "version": {
+      "message": ":bookmark: publish %s"
+    }
+  }
 }
