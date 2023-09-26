@@ -1,6 +1,6 @@
 {
   "name": "@llanas/lds-core",
-  "version": "0.0.7-patch.0",
+  "version": "0.0.8-patch.0",
   "description": "Stencil Component Starter",
   "license": "MIT",
   "access": "public",
