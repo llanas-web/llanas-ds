@@ -29,6 +29,8 @@ jobs:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
       - name: Install dependencies
         run: pnpm install
+      - name: Build
+        run: pnpm -r -stream build
       - name: Versioning
         run: npm run version:patch
       - name: Authenticate with Registry

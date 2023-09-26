@@ -1,6 +1,8 @@
 name: Build
 on:
   push:
+    branches-ignore: 
+      - develop
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -19,5 +21,5 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
-    - name: Generate Changelog
-      run: pnpm -r -stream changelog
+    - name: Build
+      run: pnpm -r -stream build
